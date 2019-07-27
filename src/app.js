@@ -6,6 +6,7 @@ const app = express();
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 const publicDirectoryPath = path.join(__dirname, "../public");
+const port = process.env.PORT || 3000;
 
 hbs.registerPartials(partialsPath);
 //configuring views part for express
@@ -79,6 +80,6 @@ app.get("*", (req, res) => {
   })
 });
 
-app.listen(3001, () => {
-  console.log("Server is listening on port 3001");
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 })
